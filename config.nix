@@ -1,17 +1,21 @@
 {
-  packageOverrides = pkgs: with pkgs; {
+packageOverrides = pkgs: with pkgs; {
     myPackages = pkgs.buildEnv {
-      name = "bohlea-packages";
-      paths = [
-      neovim
-      fzf
-      k9s
-      kubectl
-      helm
-      lazygit
-      ripgrep
-      iputils-ping
-      ];
+    name = "bohlea-packages";
+    paths = [
+        nvim
+        git
+        fzf
+        wget
+        curl
+        tmux
+        fd
+        bat
+        exa
+        zoxide
+        ripgrep
+        kubectl
+        ];
     };
-  };
+};
 }
