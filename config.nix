@@ -6,6 +6,11 @@
       neovim
       fzf
       k9s
+      kubectl
+      helm
+      lazygit
+      ripgrep
+      iputils-ping
       ];
     };
   };
