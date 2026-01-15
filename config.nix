@@ -1,9 +1,9 @@
 {
-packageOverrides = pkgs: with pkgs; {
+  packageOverrides = pkgs: with pkgs; {
     myPackages = pkgs.buildEnv {
-    name = "bohlea-packages";
-    paths = [
-        nvim
+      name = "bohlea-packages";
+      paths = [
+        neovim
         git
         fzf
         wget
@@ -15,7 +15,7 @@ packageOverrides = pkgs: with pkgs; {
         zoxide
         ripgrep
         kubectl
-        ];
+      ];
     };
-};
+  };
 }
