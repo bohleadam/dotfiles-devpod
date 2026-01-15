@@ -11,10 +11,12 @@
         tmux
         fd
         bat
-        exa
+        eza
         zoxide
         ripgrep
         kubectl
+        k9s
+        kubernetes-helm
       ];
     };
   };
