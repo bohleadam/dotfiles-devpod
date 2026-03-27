@@ -20,6 +20,8 @@
         unixtools.ping
         oh-my-posh
         zinit
+        talosctl
+        gcc15
       ];
     };
   };
