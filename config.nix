@@ -22,6 +22,7 @@
         zinit
         talosctl
         gcc15
+        lazygit
       ];
     };
   };
