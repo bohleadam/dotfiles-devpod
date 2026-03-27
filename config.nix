@@ -19,6 +19,7 @@
         kubernetes-helm
         unixtools.ping
         oh-my-posh
+        zinit
       ];
     };
   };

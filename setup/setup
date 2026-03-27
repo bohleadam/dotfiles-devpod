@@ -8,6 +8,7 @@ ln -sf "$(pwd)/.zshrc" "$HOME"/.zshrc
 ln -sf "$(pwd)/.tmux.conf" "$HOME"/.tmux.conf
 ln -sf "$(pwd)/config.nix" "$XDG_CONFIG_HOME"/nixpkgs/config.nix
 
+wget -P "$HOME"/ https://raw.githubusercontent.com/bohleadam/dotfiles/refs/heads/main/zshrc/.zshrc
 
 
 # Install Nix Packages from config.nix
