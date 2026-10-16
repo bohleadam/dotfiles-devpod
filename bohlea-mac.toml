@@ -41,9 +41,13 @@ final_space = true
       commit_icon = '@'
       fetch_status = true
 
+# Right-aligned on the same line as the path. An rprompt block would render on the
+# ❯ input line instead, because zsh draws RPROMPT on the last line of the prompt.
+# 'hide' drops this block when the path is too long to fit both on one line.
 [[blocks]]
-  type = 'rprompt'
-  overflow = 'hidden'
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hide'
 
   [[blocks.segments]]
     template = '{{ .FormattedMs }}'
@@ -55,6 +59,20 @@ final_space = true
     [blocks.segments.properties]
       cache_duration = 'none'
       threshold = 5000
+
+  # Current kube context, plus the cluster when it differs from the context name
+  # and the namespace when one is set: ⎈ context @cluster (namespace)
+  [[blocks.segments]]
+    template = ' ⎈ {{ .Context }}{{ if and .Cluster (ne .Cluster .Context) }} <p:grey>@{{ .Cluster }}</>{{ end }}{{ if .Namespace }}<p:grey> ({{ .Namespace }})</>{{ end }}'
+    foreground = 'cyan'
+    background = 'transparent'
+    type = 'kubectl'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      parse_kubeconfig = true
+      display_error = false
 
 [[blocks]]
   type = 'prompt'
